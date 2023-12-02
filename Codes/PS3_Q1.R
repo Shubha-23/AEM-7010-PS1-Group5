@@ -8,11 +8,13 @@ library(tidyr)
 
 rm(list=ls())
 
-setwd("/Users/shubhalakshminag/Dropbox/Cornell coursework/Semester 1/Applied micro 1/PS 3")
-
+#setwd("/Users/shubhalakshminag/Dropbox/Cornell coursework/Semester 1/Applied micro 1/PS 3")
+base_dir <- getwd()
+data_dir <- paste0(base_dir,"/Data")
+out_dir <- paste0(base_dir,"/Output")
 # Import data
 
-data <- read.csv("OTC_Headache.csv")
+data <- read.csv(paste0(data_dir,"/raw/OTC_Headache.csv"))
 
 # (a) Reshape wide to long
 
@@ -234,10 +236,10 @@ table <- table %>%
     `% units sold during promotion`=propn_promotion
   ) 
 
-stargazer(table, summary = F, rownames = T, out = "/Users/shubhalakshminag/Dropbox/Cornell coursework/Semester 1/Applied micro 1/PS 3/AEM-7010-PS1-Group5/output/sumstats.tex") 
+stargazer(table, summary = F, rownames = T, out = paste0(out_dir,"/sumstats.tex")) 
 
 # Export cleaned data
-write.csv(data_final, "/Users/shubhalakshminag/Dropbox/Cornell coursework/Semester 1/Applied micro 1/PS 3/data_clean.csv", row.names=FALSE)
+write.csv(data_final, paste0(data_dir,"/clean/data_clean.csv"), row.names=FALSE)
 
 
 
