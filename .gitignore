@@ -1,0 +1,15 @@
+#*.png
+*.dta
+*.csv
+*.txt
+*.log
+#*.tex
+#*.pdf
+*.docx
+*.xlsx
+*.xls
+*.Rproj
+*.Rhistory
+.DS_Store
+.DS_Store?
+.Rproj.user
